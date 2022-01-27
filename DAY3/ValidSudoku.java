@@ -1,7 +1,7 @@
 public class ValidSudoku{
     public static void main(String[] args){
         char[][] arr = new char[][] {
-            { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
+            { '9', '3', '.', '.', '7', '.', '.', '.', '.' },
             { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
             { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
             { '8', '.', '.', '.', '6', '.', '.', '.', '3' },
@@ -11,7 +11,7 @@ public class ValidSudoku{
             { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
             { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
         };
-        boolean result = validSudoku(arr, 9);
+        boolean result = isValidSudoku(arr, 9);
         System.out.println(result);
     }
     public static boolean isValidPosition(char[][] arr, int row, int col, char ch){
@@ -56,11 +56,13 @@ public class ValidSudoku{
         }
         return true;
     }
-    public static boolean validSudoku(char[][] arr, int n){
+    public static boolean isValidSudoku(char[][] arr, int n){
+        //Check Each Character that it is '.' or number  
         for(int i=0; i<9; i++){
             for(int j=0; j<9; j++){
                 if(arr[i][j] >= '1' && arr[i][j] <= '9'){
                     char ch = arr[i][j];
+                    //Check for the validation of a number 
                     if(isValidPosition(arr, i, j, ch) == false){
                         return false;
                     }

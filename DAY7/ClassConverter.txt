@@ -1,0 +1,36 @@
+{
+   "firstName":"John",
+   "lastName":"Smith",
+   "age":25,
+   "address":{
+      "streetAddress":"21 2nd Street",
+      "city":"New York",
+      "state":"NY",
+      "postalCode":10021
+   },
+   "phoneNumbers":[
+      {
+         "type":"home",
+         "number":"212 555-1234"
+      },
+      {
+         "type":"fax",
+         "number":"646 555-4567"
+      }
+   ]
+}
+
+class person{
+    String firstName = "John";
+    String lastName = "Smith"; 
+    int age = 25;
+    Address address;
+    List<String, Object> phoneNumbers;
+}
+
+class Address{
+    String streetAddress = "21 2nd Street";
+    String city = "San Francisco";
+    String state = "NY";
+    int postalCode = 10021;
+}

@@ -4,24 +4,26 @@
 import java.util.*;
 public class RemoveDuplicates{
     public static void main(String[] args){
-        int arg[] = {1, 2, 2, 3, 4, 5};
-        int n = arg.length;
-        n = removeDuplicatesArray(arg, n);
-        for(int i=0; i<n; i++){
+        int arg[] = {1, 5, 6, 4, 4, 3, 3};
+        int upSize = arg.length;
+        upSize = removeDuplicatesArray(arg, upSize);
+        //Loop to print Array
+        for(int i=0; i<upSize; i++){
             System.out.print(arg[i] + " ");
         }
     }
-    public static int removeDuplicatesArray(int[] arr, int n){
+    public static int removeDuplicatesArray(int[] arr, int idx){
         Arrays.sort(arr);
-        int j=0;
-        //int[] temp = new int[n];
-        for(int i=0; i<n-1; i++){
+        int exPtr=0;//Extra Pointer
+
+        //Array Iterator Loop
+        for(int i=0; i<idx-1; i++){
             if(arr[i] != arr[i+1]){
-                arr[j++] = arr[i];
+                arr[exPtr++] = arr[i];
             }
         }
-        arr[j++] = arr[n-1];
-        return j;
-        
+        //To save end element
+        arr[exPtr++] = arr[idx-1];
+        return exPtr;
     }
 }

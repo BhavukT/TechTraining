@@ -1,4 +1,4 @@
-import java.util.*;
+//import java.util.*;
 
 public class StringUtils {
     public static void main(String[] args) {
@@ -53,6 +53,7 @@ public class StringUtils {
     public static String[] split(String str,char ch){
         //String c = toString(ch);
         int countWord = countChar(str, ch);
+        countWord += 1;
         int idx = 0;
         String[] result = new String[countWord];
         String temp = " ";
@@ -93,7 +94,7 @@ public class StringUtils {
     }
     //All Words Containg Character
     public static Boolean allWordsContainsChar(String str,char ch){
-        String[] combinations = split(str, " ");
+        String[] combinations = str.split(" ");
         boolean flag = false;
         for(String ans : combinations){
             for(int i=0; i<ans.length(); i++){

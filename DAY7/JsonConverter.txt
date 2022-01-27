@@ -1,0 +1,37 @@
+public class Employee
+{    
+    String name;  
+    int salary;  
+    Boolean married;
+    String grade = null;
+    Address address;
+    List<String> mobileNumbers;
+    Map<String,Object> Address;
+}
+
+public class Address
+{
+ String primaryAddress;
+ String secondaryAddress;
+ String country;
+ String state;
+}
+
+{
+    "Employee" : {
+        "Name" : "Bhavuk",
+        "Salary" : 123,
+        "Married" : true,
+        "Grade" : NULL,
+        "Address" : {
+            "primaryAddress" : "",
+            "secondaryAddress" : "",
+            "Country" : "",
+            "State" : "" 
+        },
+        "mobileNumbers" : [
+            9811662447,
+            9871228819
+        ]
+    },
+}
