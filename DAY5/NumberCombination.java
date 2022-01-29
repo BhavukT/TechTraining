@@ -1,28 +1,35 @@
 import java.util.*;
-class NuberCombination{
 
-    public static void main(String[] args){
+class NuberCombination {
 
+    public static void main(String[] args) {
+        // String passed
+        String str = "123";
+        // Answer ArrayList
+        ArrayList<String> list = getSmallAns(str);
+        // print
+        System.out.println(list);
 
     }
-    //Predefinded Array
-    static String[] codes = {"","ZYA","BO","UP","QWE", "RTY", "TRE", "OPI", "ASD", "FGH", "GHJ", "JKL","L"};
 
-    public static ArrayList<String> getSmallAns(String str){
-        //123
-        char ch = str.charAt(0);//1
-        String ros = str.substring(1);//23
+    // Predefinded Array
+    static String[] codes = { "", "ZYA", "BO", "UP", "QWE", "RTY", "TRE", "OPI", "ASD", "FGH", "GHJ", "JKL", "L" };
 
-        //Result for next Position
+    public static ArrayList<String> getSmallAns(String str) {
+        // 123
+        char ch = str.charAt(0);// 1
+        String ros = str.substring(1);// 23
+
+        // Result for next Position
         ArrayList<String> recResult = getSmallAns(ros);
-        //Result for this position
+        // Result for this position
         ArrayList<String> myResult = new ArrayList<String>();
 
-        String myCodes = codes[ch - '0']; //This character
-        for(int i=0; i<myCodes.length(); i++){
+        String myCodes = codes[ch - '0']; // This character
+        for (int i = 0; i < myCodes.length(); i++) {
             char chCode = myCodes.charAt(i);
 
-            for(String rstr: recResult){
+            for (String rstr : recResult) {
                 myResult.add(chCode, rstr);
             }
         }

@@ -9,6 +9,10 @@ public class Employee
     Map<String,Object> Address;
 }
 
+
+
+JSON.parse();
+
 public class Address
 {
  String primaryAddress;
@@ -16,8 +20,8 @@ public class Address
  String country;
  String state;
 }
-
-{
+String json = 
+"{
     "Employee" : {
         "Name" : "Bhavuk",
         "Salary" : 123,
@@ -34,4 +38,4 @@ public class Address
             9871228819
         ]
     },
-}
+}";
