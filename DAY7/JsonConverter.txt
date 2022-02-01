@@ -11,7 +11,7 @@ public class Employee
 
 
 
-JSON.parse();
+
 
 public class Address
 {
@@ -22,20 +22,24 @@ public class Address
 }
 String json = 
 "{
-    "Employee" : {
-        "Name" : "Bhavuk",
-        "Salary" : 123,
-        "Married" : true,
-        "Grade" : NULL,
-        "Address" : {
-            "primaryAddress" : "",
-            "secondaryAddress" : "",
-            "Country" : "",
-            "State" : "" 
+    "employee" : {
+        "name" : "Bhavuk",
+        "salary" : 123,
+        "married" : true,
+        "grade" : null,
+        "address" : {
+            "primaryAddress" : "ABCD",
+            "secondaryAddress" : "EFGH",
+            "country" : "INDIA",
+            "state" : "UP" 
         },
         "mobileNumbers" : [
-            9811662447,
-            9871228819
-        ]
+            "9811662447",
+            "9871228819"
+        ],
+	"Address" : {
+		"Pin Code" : 123,
+		"Country" : "India"
+	}
     },
 }";
