@@ -1,16 +1,16 @@
 import java.util.*;
 
 public class ATM {
-    private long balanceInATM;
-    private Map<Integer, Integer> availableNotes;
-    private int notesOf100 = 100;
-    private int notesOf200 = 200;
-    private int notesOf500 = 500;
-    private int notesOf2000 = 2000;
+    private long balanceInATM; // Balance in ATM
+    private Map<Integer, Integer> availableNotesInATM; // Available notes in ATM
+    private int notesOf100 = 100; // Notes Value
+    private int notesOf200 = 200; // Notes Value
+    private int notesOf500 = 500; // Notes Value
+    private int notesOf2000 = 2000; // Notes Value
 
-    ATM(Bank bank) { // Constructor
+    ATM() { // Constructor
         this.balanceInATM = 0;
-        this.availableNotes = new HashMap<Integer, Integer>() {
+        this.availableNotesInATM = new HashMap<Integer, Integer>() {
             {
                 put(notesOf100, 10);
                 put(notesOf200, 10);
@@ -20,22 +20,22 @@ public class ATM {
         };
     }
 
-    //Update Notes in ATM
+    // Update Notes in ATM
     public void updateNotesInATM(int denomination, int numberOfDenominations) {
-        this.availableNotes.put(denomination, this.availableNotes.get(denomination) + numberOfDenominations);
+        this.availableNotesInATM.put(denomination, this.availableNotesInATM.get(denomination) + numberOfDenominations);
     }
 
-    //Get Balance in the ATM
+    // Get Balance in the ATM
     public long getTotalBalanceInATM() {
         return balanceInATM;
     }
 
-    //Available Notes in ATM
-    public Map<Integer, Integer> getAvailableNotes() {
-        return availableNotes;
+    // Available Notes in ATM
+    public Map<Integer, Integer> getAvailableNotesInATM() {
+        return availableNotesInATM;
     }
 
-    //Withdraww Cash from Atm
+    // Withdraww Cash from Atm
     public Map<Integer, Integer> withdrawCashFromATM(long amount, Account account) {
 
         if (account.getAvailableBalance() < amount) {
@@ -56,8 +56,8 @@ public class ATM {
 
         // 2000 Notes
         int currentNotesOf2000 = (int) (tempAmount / notesOf2000);
-        if (this.availableNotes.get(notesOf2000) < currentNotesOf2000) {
-            currentNotesOf2000 = this.availableNotes.get(notesOf2000);
+        if (this.availableNotesInATM.get(notesOf2000) < currentNotesOf2000) {
+            currentNotesOf2000 = this.availableNotesInATM.get(notesOf2000);
         }
         withdrawNotesType.put(notesOf2000, currentNotesOf2000);
         tempAmount = tempAmount - (currentNotesOf2000 * notesOf2000);
@@ -65,8 +65,8 @@ public class ATM {
 
         // 500 Notes
         int currentNotesOf500 = (int) (tempAmount / notesOf500);
-        if (this.availableNotes.get(notesOf500) < currentNotesOf500) {
-            currentNotesOf500 = this.availableNotes.get(notesOf500);
+        if (this.availableNotesInATM.get(notesOf500) < currentNotesOf500) {
+            currentNotesOf500 = this.availableNotesInATM.get(notesOf500);
         }
         withdrawNotesType.put(notesOf500, currentNotesOf500);
         tempAmount = tempAmount - (currentNotesOf500 * notesOf500);
@@ -74,8 +74,8 @@ public class ATM {
 
         // 200 Notes
         int currentNotesOf200 = (int) (tempAmount / notesOf200);
-        if (this.availableNotes.get(notesOf200) < currentNotesOf200) {
-            currentNotesOf200 = this.availableNotes.get(notesOf200);
+        if (this.availableNotesInATM.get(notesOf200) < currentNotesOf200) {
+            currentNotesOf200 = this.availableNotesInATM.get(notesOf200);
         }
         withdrawNotesType.put(notesOf200, currentNotesOf200);
         tempAmount = tempAmount - (currentNotesOf200 * notesOf200);
@@ -83,10 +83,10 @@ public class ATM {
 
         // 100 Notes
         int currentNotesOf100 = (int) (tempAmount / notesOf100);
-        withdrawNotesType.put(notesOf100, currentNotesOf100);
-        if (this.availableNotes.get(notesOf100) < currentNotesOf100) {
-            currentNotesOf100 = this.availableNotes.get(notesOf100);
+        if (this.availableNotesInATM.get(notesOf100) < currentNotesOf100) {
+            currentNotesOf100 = this.availableNotesInATM.get(notesOf100);
         }
+        withdrawNotesType.put(notesOf100, currentNotesOf100);
         tempAmount = tempAmount - (currentNotesOf100 * notesOf100);
         updateNotesInATM(notesOf100, currentNotesOf100);
 
@@ -119,5 +119,4 @@ public class ATM {
         updateNotesInATM(notesOf500, currentNotesOf500);
         updateNotesInATM(notesOf2000, currentNotesOf2000);
     }
-
-}   
+}
