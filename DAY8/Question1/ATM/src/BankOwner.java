@@ -1,10 +1,10 @@
 import java.util.*;
-public class BankManager {
+public class BankOwner {
     private String name; 
 	private String mobileNumber; 
 	private Bank bank; 
 	
-	BankManager(String name, String mobileNumber, Bank bank){ //Constructor
+	BankOwner(String name, String mobileNumber, Bank bank){ //Constructor
 		this.name = name;
 		this.mobileNumber = mobileNumber;
 		this.bank = bank;
