@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class ATMMachine{
 	
 	public static void displayInfo(User user) { //To display the info of user
